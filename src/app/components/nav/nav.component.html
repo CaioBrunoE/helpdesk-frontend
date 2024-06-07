@@ -1,4 +1,4 @@
-<mat-drawer-container class="container" autosize>
+<mat-drawer-container class="container" autosize color="primary">
   <mat-drawer #drawer class="sidenav" mode="side">
     <img src="assets/img/side-image.svg" alt="imagem de navegação">
     <mat-nav-list class="nav-list">
@@ -33,5 +33,7 @@
     <button  class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
      <mat-icon>menu</mat-icon>
     </button>
+    <router-outlet></router-outlet>
   </div>
+  
 </mat-drawer-container>
