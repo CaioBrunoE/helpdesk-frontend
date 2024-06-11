@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import {
   HttpRequest,
@@ -26,8 +27,8 @@ export class AuthInterceptor implements HttpInterceptor {
 
 export const AuthInterceptorProvinder=[
   {
-    provid: HTTP_INTERCEPTORS,
-    useClas: AuthInterceptor,
-    multi: true
+    provid:HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true
   }
 ]
