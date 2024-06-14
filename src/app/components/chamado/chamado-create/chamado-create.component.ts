@@ -55,9 +55,7 @@ export class ChamadoCreateComponent implements OnInit {
       this.toast.success('Chamado criado com sucesso', 'Novo chamado');
       this.router.navigate(['chamados']);
     }, ex => {
-      console.log(ex)
-      this.toast.error(ex.error.error);
-       
+      this.toast.error(ex.error.error);  
     })
 }
 
