@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
@@ -6,11 +6,12 @@ import { Tecnico } from "src/app/models/tecnico";
 import { TecnicoService } from "src/app/services/tecnico.service";
 
 @Component({
-  selector: "app-tecnico-update",
-  templateUrl: "./tecnico-update.component.html",
-  styleUrls: ["./tecnico-update.component.css"],
+  selector: 'app-tecnico-delete',
+  templateUrl: './tecnico-delete.component.html',
+  styleUrls: ['./tecnico-delete.component.css']
 })
-export class TecnicoUpdateComponent implements OnInit {
+export class TecnicoDeleteComponent implements OnInit {
+
   tecnico: Tecnico = {
     id: "",
     nome: "",
@@ -20,11 +21,6 @@ export class TecnicoUpdateComponent implements OnInit {
     perfis: [],
     dataCriacao: "",
   };
-
-  nome: FormControl = new FormControl(null, Validators.minLength(3));
-  cpf: FormControl = new FormControl(null, Validators.required);
-  email: FormControl = new FormControl(null, Validators.email);
-  senha: FormControl = new FormControl(null, Validators.minLength(3));
 
   constructor(
     private service: TecnicoService,
@@ -46,10 +42,10 @@ export class TecnicoUpdateComponent implements OnInit {
    });
   }
 
-  update(): void {
-    this.service.update(this.tecnico).subscribe(
+  delete(): void {
+    this.service.delete(this.tecnico.id).subscribe(
       () => {
-        this.toast.success("Tecnico atualizado Com sucesso", "Atualizado");
+        this.toast.success("Tecnico deletado Com sucesso ", "Deletado");
         this.router.navigate(["tecnicos"]);
       },
       (ex) => {
@@ -64,17 +60,5 @@ export class TecnicoUpdateComponent implements OnInit {
     );
   }
 
-  addPerfil(perfil: any): void {
-    if (this.tecnico.perfis.includes(perfil)) {
-      this.tecnico.perfis.splice(this.tecnico.perfis.indexOf(perfil), 1);
-    } else {
-      this.tecnico.perfis.push(perfil);
-    }
-  }
-
-  validaCampos(): boolean {
-    return (
-      this.nome.valid && this.cpf.valid && this.email.valid && this.senha.valid
-    );
-  }
 }
+
