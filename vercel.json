@@ -1,12 +1,6 @@
 {
-    "build": {
-      "env": {
-        "NODE_OPTIONS": "--openssl-legacy-provider"
-      }
-    },
     "engines": {
-      "node": "14.17.1",
-      "npm": "7.5.6"
+      "node": "14.x"
     }
 }
   
