@@ -6,7 +6,7 @@
         "src": "package.json",
         "use": "@vercel/node",
         "config": {
-          "nodeVersion": "16.x"
+          "nodeVersion": "14.17.1"
         }
       }
     ],
