@@ -1,6 +1,8 @@
 {
-    "engines": {
-      "node": "14.x"
+  "build": {
+    "env": {
+      "NODE_VERSION": "14.x"
     }
+  }
 }
-  
+
