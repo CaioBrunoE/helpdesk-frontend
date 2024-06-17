@@ -1,8 +1,8 @@
 {
-  "build": {
-    "env": {
-      "NODE_VERSION": "14.17.1"
+    "name": "helpdesk-frontend",
+    "version": "1.0.0",
+    "engines": {
+      "node": "14.17.1"
     }
   }
-}
-
+  
