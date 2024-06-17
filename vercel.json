@@ -9,12 +9,6 @@
           "nodeVersion": "14.17.1"
         }
       }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/dist/helpdesk/$1"
-      }
     ]
   }
   
